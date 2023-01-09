@@ -127,3 +127,30 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+import tkinter as tk
+
+def show_response(response):
+    response_label.config(text=response)
+
+# Maak het venster aan
+window = tk.Tk()
+window.title("Hoe gaat het met je?")
+
+# Maak een label aan om de vraag te tonen
+question_label = tk.Label(window, text="Hoe gaat het met je?")
+question_label.pack()
+
+# Maak een invoerveld aan om het antwoord te ontvangen
+response_entry = tk.Entry(window)
+response_entry.pack()
+
+# Maak een knop aan om het antwoord te verzenden
+submit_button = tk.Button(window, text="Verzenden", command=lambda: show_response(response_entry.get()))
+submit_button.pack()
+
+# Maak een label aan om het antwoord te tonen
+response_label = tk.Label(window)
+response_label.pack()
+
+# Laat het venster zien
+window.mainloop()
